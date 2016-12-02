@@ -1,1 +1,1 @@
-# dotfiles
+# dotfilesinstall dotfiles```pip3 install dotfiles```You could bootstrap with```sh -c "$(wget https://raw.githubusercontent.com/piotr-kostecki-bitbar/dotfiles/master/bootstrap.sh -O -)"```Or clone repo and manage manually with dotfiles
