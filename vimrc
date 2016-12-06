@@ -1,7 +1,9 @@
 syntax on
 set number
 set hidden
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+"set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set clipboard=unnamed,unnamedplus
+set listchars=tab:▸\ ,eol:¬
 set wildmenu
 set wildmode=list:longest,full
 set mouse+=a
@@ -17,6 +19,13 @@ call plug#begin('~/.vim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-vinegar'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'jreybert/vimagit'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -28,7 +37,8 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -195,15 +205,14 @@ endfunction
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-map <leader>p <c-p>
+map <leader>p :FZF<cr>
 
 nnoremap <leader>r :NERDTreeToggle<CR>
 
-nnoremap <leader>b :BuffersToggle<CR>
+nnoremap <leader>b :Buffers<CR>
 
 set showcmd
 
-"map <leader>b :Unite buffer<CR>
 map <leader>o :TagbarToggle<CR>
 map <leader>q !!/bin/bash<CR>
 map <leader>c "*y

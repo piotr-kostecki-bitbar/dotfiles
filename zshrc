@@ -24,3 +24,6 @@ antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-
 antigen apply
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+source ~/.zshrc.local
