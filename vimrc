@@ -25,7 +25,11 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-obsession'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -203,8 +207,6 @@ function! s:CloseIfOnlyNerdTreeLeft()
   endif
 endfunction
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 map <leader>p :FZF<cr>
 
 nnoremap <leader>r :NERDTreeToggle<CR>
@@ -220,8 +222,6 @@ let g:ag_prg="/usr/local/bin/ag --vimgrep"
 let g:ag_working_path_mode="r"
 :map! jj <ESC>
 
-map <leader>rr :Unite register<CR>
-map <leader>u :Unite<CR>
 map <leader>VV :e ~/.vimrc<CR>
 
 let g:airline_powerline_fonts = 1
@@ -279,3 +279,4 @@ augroup project
 augroup END
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:neocomplcache_enable_at_startup = 1

@@ -25,5 +25,5 @@ antigen apply
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-source ~/.zshrc.local
